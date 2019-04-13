@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="376.0"
+            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="home.david.database.crypted.DatabaseController">
+    <top>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Close"/>
+                                <MenuItem id="open_database_menu" mnemonicParsing="false" onAction="#menuEvent"
+                                          text="Open Database"/>
+                                <MenuItem id="test_fill_menu" mnemonicParsing="false" onAction="#menuEvent"
+                                          text="Test Fill"/>
+                                <MenuItem id="change_password_menu" mnemonicParsing="false" onAction="#menuEvent"
+                                          text="Change Password"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem id="add_menu" mnemonicParsing="false" onAction="#menuEvent" text="Add"/>
+                                <MenuItem id="edit_menu" mnemonicParsing="false" onAction="#menuEvent" text="Edit"/>
+                                <MenuItem id="delete_menu" mnemonicParsing="false" onAction="#menuEvent" text="Delete"/>
+                                <MenuItem id="copy_menu" mnemonicParsing="false" onAction="#menuEvent" text="Copy"/>
+                                <MenuItem id="new_main_key_menu" mnemonicParsing="false" onAction="#menuEvent"
+                                          text="Create New Main Key"/>
+                                <MenuItem id="refresh_menu" mnemonicParsing="false" onAction="#menuEvent"
+                                          text="Refresh"/>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About"/>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <HBox prefHeight="0.0" prefWidth="600.0" spacing="5.0">
+                    <children>
+                        <Label prefHeight="23.0" prefWidth="37.0" text="Key:"/>
+                        <TextField fx:id="key_tf" HBox.hgrow="ALWAYS"/>
+                        <Button fx:id="search_btn" mnemonicParsing="false" text="Search"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fx:id="scrollPane" BorderPane.alignment="CENTER">
+            <content>
+                <VBox fx:id="key_holder"/>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
